@@ -132,6 +132,8 @@ function Ask-OpenAI {
     $response = Invoke-OpenAIRequest -Url $Endpoint -SubscriptionKey $SubscriptionKey -Body $body
     Invoke-OpenAIStream -Response $response
 }
+Add-Type -AssemblyName System.Net.Http
+
 
 # 示例用法,终结点放你的Azure OpenAI的终结点
     $endpoint = "https://xxxx.aaa-api.net/openai/bb/99/chat/completions?api-version=abc"
