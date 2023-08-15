@@ -3,7 +3,7 @@
 MS pengliang 
 
 .SYNOPSIS
-管理 Windows 更新配置的 PowerShell 模块
+管理 Windows 更新配置的 PowerShell 模块 
 
 .DESCRIPTION
 包含用于禁用/启用 Windows 更新相关服务、计划任务、注册表及策略的函数。
