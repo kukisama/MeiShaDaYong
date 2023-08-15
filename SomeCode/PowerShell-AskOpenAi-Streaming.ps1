@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    这个脚本设计用于与OpenAI API交互，提出问题并获得回答。优点是流式输出
+    这个脚本设计用于与OpenAI API交互，提出问题并获得回答。优点是流式输出 
     MS zhangpengliang
 
 .DESCRIPTION
