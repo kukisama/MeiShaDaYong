@@ -73,7 +73,7 @@ function Invoke-OpenAIRequest {
         "api-key" =  $SubscriptionKey
         "Content-Type" = "application/json; charset=utf-8"
     }
-    
+    Add-Type -AssemblyName System.Net.Http
     $client = New-Object System.Net.Http.HttpClient
     $request = [System.Net.Http.HttpRequestMessage]::new()
     $request.Method = "POST"
