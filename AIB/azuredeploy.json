@@ -70,7 +70,7 @@
         "description": "为 Azure Image Builder 构建生成的自定义映像设置的详细Image信息."
       }
     },
-    "虚拟机实例大小": {
+    "VM size": {
       "type": "string",
       "defaultValue": "Standard_D2_v3"
     },
