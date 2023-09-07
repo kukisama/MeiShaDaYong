@@ -126,7 +126,7 @@
       "name": "[parameters('templateIdentityRoleDefinitionName')]",
       "properties": {
         "roleName": "[parameters('templateIdentityRoleDefinitionName')]",
-        "description": "用于运行 AIB 构建的 AIB 模板和 ARM 部署脚本”,
+        "description": "用于运行 AIB 构建的 AIB 模板和 ARM 部署脚本",
         "type": "customRole",
         "permissions": [
           {
