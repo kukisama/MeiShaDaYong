@@ -80,14 +80,14 @@
     },
     "imageTemplateName": {
       "type": "string",
-      "defaultValue": "Win2022_AzureWindowsBaseline_Template",
+      "defaultValue": "Win2019_AzureWindowsBaseline_Template",
       "metadata": {
         "description": "要在 Azure Image Builder 中创建的模板的名称."
       }
     },
     "runOutputName": {
       "type": "string",
-      "defaultValue": "Win2022_AzureWindowsBaseline_CustomImage",
+      "defaultValue": "Win2019_AzureWindowsBaseline_CustomImage",
       "metadata": {
         "description": "要使用 Azure Image Builder 创建和分发的自定义映像的名称."
       }
