@@ -9,20 +9,6 @@
     }  
   }, 
   "parameters": {
-    "_artifactsLocation": {
-      "type": "string",
-      "defaultValue": "[deployment().properties.templateLink.uri]",
-      "metadata": {
-        "description": "模板的URL,默认不需要修改. '/'"
-      }
-    },
-    "_artifactsLocationSasToken": {
-      "type": "securestring",
-      "defaultValue": "",
-      "metadata": {
-        "description": "访问_artifactsLocation所需的sasToken。当使用附带的脚本部署模板时,将自动生成一个sasToken。如果暂存位置不安全,请使用defaultValue."
-      }
-    },
     "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
@@ -145,8 +131,7 @@
               "Microsoft.ContainerInstance/containerGroups/start/action",
               "Microsoft.Resources/deployments/read",
               "Microsoft.Resources/deploymentScripts/read",
-              "Microsoft.Resources/deploymentScripts/write",
-                "Microsoft.VirtualMachineImages/imageTemplates/run/action"
+              "Microsoft.Resources/deploymentScripts/write"
             ]
           }
         ],
@@ -265,32 +250,7 @@
         "[resourceId('Microsoft.Compute/galleries/images', parameters('imageGalleryName'), parameters('imageDefinitionProperties').name)]",
         "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName'))]"
       ]
-    },
-    {
-      "type": "Microsoft.Resources/deploymentScripts",
-      "apiVersion": "2020-10-01",
-      "name": "Image_template_build",
-      "location": "[parameters('locationforscripts')]",
-      "kind": "AzurePowerShell",
-      "identity": {
-        "type": "UserAssigned",
-        "userAssignedIdentities": {
-          "[format('{0}', resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName')))]": {}
-        }
-      },
-      "properties": {
-        "forceUpdateTag": "[parameters('forceUpdateTag')]",
-        "azPowerShellVersion": "6.2",
-        "scriptContent": "[format('Invoke-AzResourceAction -ResourceName \"{0}\" -ResourceGroupName \"{1}\" -ResourceType \"Microsoft.VirtualMachineImages/imageTemplates\" -ApiVersion \"2020-02-14\" -Action Run -Force', parameters('imageTemplateName'), resourceGroup().name)]",
-        "timeout": "PT1H",
-        "cleanupPreference": "OnSuccess",
-        "retentionInterval": "P1D"
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.VirtualMachineImages/imageTemplates', parameters('imageTemplateName'))]",
-        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName'))]",
-        "[resourceId('Microsoft.Authorization/roleAssignments', variables('templateIdentityRoleAssignmentName'))]"
-      ]
     }
+   
   ]
 }
