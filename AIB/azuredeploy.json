@@ -13,14 +13,14 @@
       "type": "string",
       "defaultValue": "[deployment().properties.templateLink.uri]",
       "metadata": {
-        "description": "模板的URL，默认不需要修改. '/'"
+        "description": "模板的URL,默认不需要修改. '/'"
       }
     },
     "_artifactsLocationSasToken": {
       "type": "securestring",
       "defaultValue": "",
       "metadata": {
-        "description": "访问_artifactsLocation所需的sasToken。当使用附带的脚本部署模板时，将自动生成一个sasToken。如果暂存位置不安全，请使用defaultValue."
+        "description": "访问_artifactsLocation所需的sasToken。当使用附带的脚本部署模板时,将自动生成一个sasToken。如果暂存位置不安全,请使用defaultValue."
       }
     },
     "location": {
@@ -41,7 +41,7 @@
       "type": "string",
       "defaultValue": "[substring(format('ImageGallery_{0}', guid(resourceGroup().id)), 0, 21)]",
       "metadata": {
-        "description": "Azure Image Builder 模板使用的用户分配托管标识的名称，用于在部署结束时触发 Azure Image Builder 生成."
+        "description": "Azure Image Builder 模板使用的用户分配托管标识的名称,用于在部署结束时触发 Azure Image Builder 生成."
       }
     },
     "templateIdentityRoleDefinitionName": {
@@ -98,14 +98,14 @@
         "westeurope"
       ],
       "metadata": {
-        "description": "列出创建自定义映像后，您希望将其复制到的 Azure 区域 (注意中国和Global的区别)."
+        "description": "列出创建自定义映像后,您希望将其复制到的 Azure 区域 (注意中国和Global的区别)."
       }
     },
     "forceUpdateTag": {
       "type": "string",
       "defaultValue": "[newGuid()]",
       "metadata": {
-        "description": "为每个部署生成唯一的字符串，以确保脚本始终运行."
+        "description": "为每个部署生成唯一的字符串,以确保脚本始终运行."
       }
     }
   },
