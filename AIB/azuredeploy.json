@@ -30,13 +30,6 @@
         "description": "应部署模板中的资源的 Azure 区域."
       }
     },
-    "customizerScriptName": {
-      "type": "string",
-      "defaultValue": "scripts/runScript.ps1",
-      "metadata": {
-        "description": "将在映像构建期间执行的定制器脚本的名称."
-      }
-    },
     "templateIdentityName": {
       "type": "string",
       "defaultValue": "[substring(format('ImageGallery_{0}', guid(resourceGroup().id)), 0, 21)]",
@@ -110,8 +103,7 @@
     }
   },
   "variables": {
-    "customizerScriptUri": "[uri(parameters('_artifactsLocation'), format('{0}{1}', parameters('customizerScriptName'), parameters('_artifactsLocationSasToken')))]",
-    "templateIdentityRoleAssignmentName": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName')), resourceGroup().id, resourceId('Microsoft.Authorization/roleDefinitions', parameters('templateIdentityRoleDefinitionName')))]"
+      "templateIdentityRoleAssignmentName": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName')), resourceGroup().id, resourceId('Microsoft.Authorization/roleDefinitions', parameters('templateIdentityRoleDefinitionName')))]"
   },
   "resources": [
     {
@@ -143,9 +135,6 @@
               "Microsoft.ContainerInstance/containerGroups/read",
               "Microsoft.ContainerInstance/containerGroups/write",
               "Microsoft.ContainerInstance/containerGroups/start/action",
-              "Microsoft.Resources/deployments/read",
-              "Microsoft.Resources/deploymentScripts/read",
-              "Microsoft.Resources/deploymentScripts/write",
               "Microsoft.VirtualMachineImages/imageTemplates/run/action"
             ]
           }
