@@ -195,7 +195,7 @@
             "max": 8
           },
           "memory": {
-            "min": 16,
+            "min": 2,
             "max": 48
           }
         },
@@ -217,7 +217,7 @@
         }
       },
       "properties": {
-        "buildTimeoutInMinutes": 60,
+        "buildTimeoutInMinutes": 61,
         "vmProfile": {
           "vmSize": "[parameters('vmSize')]",
           "osDiskSizeGB": 127
