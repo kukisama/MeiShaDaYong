@@ -30,6 +30,13 @@
         "description": "应部署模板中的资源的 Azure 区域."
       }
     },
+     "locationforscripts": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "deploymentScripts所在的 Azure 区域."
+      }
+    },
     "templateIdentityName": {
       "type": "string",
       "defaultValue": "[substring(format('ImageGallery_{0}', guid(resourceGroup().id)), 0, 21)]",
@@ -135,7 +142,10 @@
               "Microsoft.ContainerInstance/containerGroups/read",
               "Microsoft.ContainerInstance/containerGroups/write",
               "Microsoft.ContainerInstance/containerGroups/start/action",
-              "Microsoft.VirtualMachineImages/imageTemplates/run/action"
+              "Microsoft.VirtualMachineImages/imageTemplates/run/action",
+              "Microsoft.Resources/deployments/read",
+              "Microsoft.Resources/deploymentScripts/read",
+              "Microsoft.Resources/deploymentScripts/write"
             ]
           }
         ],
@@ -259,7 +269,7 @@
       "type": "Microsoft.Resources/deploymentScripts",
       "apiVersion": "2020-10-01",
       "name": "Image_template_build",
-      "location": "[parameters('location')]",
+      "location": "[parameters('locationforscripts')]",
       "kind": "AzurePowerShell",
       "identity": {
         "type": "UserAssigned",
