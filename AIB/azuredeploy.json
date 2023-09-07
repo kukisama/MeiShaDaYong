@@ -73,7 +73,7 @@
     },
     "vmSize": {
       "type": "string",
-       "defaultValue": "Standard_D2ls_v5",
+       "defaultValue": "Standard_D2s_v3",
         "metadata": {
         "description": "虚拟机实例大小."
       }
