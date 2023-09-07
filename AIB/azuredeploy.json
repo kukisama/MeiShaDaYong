@@ -32,9 +32,9 @@
     },
      "locationforscripts": {
       "type": "string",
-      "defaultValue": "[resourceGroup().location]",
+      "defaultValue": "chinaeast2",
       "metadata": {
-        "description": "deploymentScripts所在的 Azure 区域.中国可用：chinaeast2"
+        "description": "deploymentScripts所在的 Azure 区域."
       }
     },
     "templateIdentityName": {
@@ -95,8 +95,8 @@
     "replicationRegions": {
       "type": "array",
       "defaultValue": [
-        "eastus2",
-        "westus2"
+        "chinaeast2",
+        "chinanorth3"
       ],
       "metadata": {
         "description": "列出创建自定义映像后,您希望将其复制到的 Azure 区域  "
