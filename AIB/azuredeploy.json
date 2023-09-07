@@ -13,49 +13,49 @@
       "type": "string",
       "defaultValue": "[deployment().properties.templateLink.uri]",
       "metadata": {
-        "description": "The base URI where artifacts required by this template are located including a trailing '/'"
+        "description": "模板的URL，默认不需要修改 '/'"
       }
     },
     "_artifactsLocationSasToken": {
       "type": "securestring",
       "defaultValue": "",
       "metadata": {
-        "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated. Use the defaultValue if the staging location is not secured."
+        "description": "访问_artifactsLocation所需的sasToken。当使用附带的脚本部署模板时，将自动生成一个sasToken。如果暂存位置不安全，请使用defaultValue."
       }
     },
     "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
-        "description": "The Azure region where resources in the template should be deployed."
+        "description": "应部署模板中的资源的 Azure 区域."
       }
     },
     "customizerScriptName": {
       "type": "string",
       "defaultValue": "scripts/runScript.ps1",
       "metadata": {
-        "description": "The name of the customizer script which will be executed during image build."
+        "description": "将在映像构建期间执行的定制器脚本的名称."
       }
     },
     "templateIdentityName": {
       "type": "string",
       "defaultValue": "[substring(format('ImageGallery_{0}', guid(resourceGroup().id)), 0, 21)]",
       "metadata": {
-        "description": "Name of the user-assigned managed identity used by Azure Image Builder template, and for triggering the Azure Image Builder build at the end of the deployment"
+        "description": "Azure Image Builder 模板使用的用户分配托管标识的名称，用于在部署结束时触发 Azure Image Builder 生成"
       }
     },
     "templateIdentityRoleDefinitionName": {
       "type": "string",
       "defaultValue": "[guid(resourceGroup().id)]",
       "metadata": {
-        "description": "Permissions to allow for the user-assigned managed identity."
+        "description": "允许用户分配的托管标识的权限."
       }
     },
     "imageGalleryName": {
       "type": "string",
       "defaultValue": "[substring(format('ImageGallery_{0}', guid(resourceGroup().id)), 0, 21)]",
       "metadata": {
-        "description": "Name of the new Azure Image Gallery resource."
+        "description": "新的 Azure Image 库资源的名称."
       }
     },
     "imageDefinitionProperties": {
@@ -67,7 +67,7 @@
         "sku": "2022-Datacenter"
       },
       "metadata": {
-        "description": "Detailed image information to set for the custom image produced by the Azure Image Builder build."
+        "description": "为 Azure Image Builder 构建生成的自定义映像设置的详细Image信息."
       }
     },
     "vmSize": {
@@ -78,14 +78,14 @@
       "type": "string",
       "defaultValue": "Win2022_AzureWindowsBaseline_Template",
       "metadata": {
-        "description": "Name of the template to create in Azure Image Builder."
+        "description": "要在 Azure Image Builder 中创建的模板的名称."
       }
     },
     "runOutputName": {
       "type": "string",
       "defaultValue": "Win2022_AzureWindowsBaseline_CustomImage",
       "metadata": {
-        "description": "Name of the custom iamge to create and distribute using Azure Image Builder."
+        "description": "要使用 Azure Image Builder 创建和分发的自定义映像的名称."
       }
     },
     "replicationRegions": {
@@ -98,14 +98,14 @@
         "westeurope"
       ],
       "metadata": {
-        "description": "List the regions in Azure where you would like to replicate the custom image after it is created."
+        "description": "列出创建自定义映像后，您希望将其复制到的 Azure 区域【注意中国和Global的区别】."
       }
     },
     "forceUpdateTag": {
       "type": "string",
       "defaultValue": "[newGuid()]",
       "metadata": {
-        "description": "A unique string generated for each deployment, to make sure the script is always run."
+        "description": "为每个部署生成唯一的字符串，以确保脚本始终运行."
       }
     }
   },
@@ -126,7 +126,7 @@
       "name": "[parameters('templateIdentityRoleDefinitionName')]",
       "properties": {
         "roleName": "[parameters('templateIdentityRoleDefinitionName')]",
-        "description": "Used for AIB template and ARM deployment script that runs AIB build",
+        "description": "用于运行 AIB 构建的 AIB 模板和 ARM 部署脚本”,
         "type": "customRole",
         "permissions": [
           {
