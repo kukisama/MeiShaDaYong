@@ -23,7 +23,7 @@
         "description": "访问_artifactsLocation所需的sasToken。当使用附带的脚本部署模板时,将自动生成一个sasToken。如果暂存位置不安全,请使用defaultValue."
       }
     },
-    "AzureLocation": {
+    "location": {
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
@@ -70,7 +70,7 @@
         "description": "为 Azure Image Builder 构建生成的自定义映像设置的详细Image信息."
       }
     },
-    "VM size": {
+    "vmSize": {
       "type": "string",
       "defaultValue": "Standard_D2_v3",
         "metadata": {
