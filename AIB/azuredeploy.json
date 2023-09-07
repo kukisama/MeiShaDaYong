@@ -61,10 +61,11 @@
     "imageDefinitionProperties": {
       "type": "object",
       "defaultValue": {
-        "name": "Win2022_AzureWindowsBaseline_Definition",
-        "publisher": "AzureWindowsBaseline",
+        "name": "MicrosoftWindowsServer",
+        "publisher": "MicrosoftWindowsServer",
         "offer": "WindowsServer",
-        "sku": "2022-Datacenter"
+        "sku": "2019-Datacenter-zhcn",
+         "version": "latest"
       },
       "metadata": {
         "description": "为 Azure Image Builder 构建生成的自定义映像设置的详细Image信息."
@@ -142,7 +143,6 @@
               "Microsoft.ContainerInstance/containerGroups/read",
               "Microsoft.ContainerInstance/containerGroups/write",
               "Microsoft.ContainerInstance/containerGroups/start/action",
-              "Microsoft.VirtualMachineImages/imageTemplates/run/action",
               "Microsoft.Resources/deployments/read",
               "Microsoft.Resources/deploymentScripts/read",
               "Microsoft.Resources/deploymentScripts/write"
@@ -225,7 +225,7 @@
           "type": "PlatformImage",
           "publisher": "MicrosoftWindowsServer",
           "offer": "WindowsServer",
-          "sku": "2022-Datacenter",
+          "sku": "2019-Datacenter-zhcn",
           "version": "latest"
         },
         "customize": [
