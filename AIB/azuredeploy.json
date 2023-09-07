@@ -233,21 +233,17 @@
           "version": "latest"
         },
         "customize": [
-          {
-            "type": "WindowsUpdate",
-            "searchCriteria": "IsInstalled=0",
-            "filters": [
-              "exclude:$_.Title -like '*Preview*'",
-              "include:$true"
-            ],
-            "updateLimit": 40
-          },
-          {
-            "type": "PowerShell",
-            "name": "AzureWindowsBaseline",
-            "runElevated": true,
-            "scriptUri": "[variables('customizerScriptUri')]"
-          }
+                    {
+                        "inline": [
+                            "mkdir c:\\\\buildActions",
+                            "mkdir c:\\\\buildArtifacts",
+                            "echo Azure-Image-Builder-Was-Here  > c:\\\\buildActions\\\\buildActionsOutput.txt"
+                        ],
+                        "name": "settingUpMgmtAgtPath",
+                        "runAsSystem": false,
+                        "runElevated": false,
+                        "type": "PowerShell"
+                    } 
         ],
         "distribute": [
           {
