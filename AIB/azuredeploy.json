@@ -99,7 +99,7 @@
         "westus2"
       ],
       "metadata": {
-        "description": "列出创建自定义映像后,您希望将其复制到的 Azure 区域 (注意中国和Global的区别)"
+        "description": "列出创建自定义映像后,您希望将其复制到的 Azure 区域  "
       }
     },
     "forceUpdateTag": {
