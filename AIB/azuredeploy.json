@@ -145,7 +145,8 @@
               "Microsoft.ContainerInstance/containerGroups/start/action",
               "Microsoft.Resources/deployments/read",
               "Microsoft.Resources/deploymentScripts/read",
-              "Microsoft.Resources/deploymentScripts/write"
+              "Microsoft.Resources/deploymentScripts/write",
+                "Microsoft.VirtualMachineImages/imageTemplates/run/action"
             ]
           }
         ],
