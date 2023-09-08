@@ -247,7 +247,12 @@
           }
         ]
       },
-        {
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/galleries/images', parameters('imageGalleryName'), parameters('imageDefinitionProperties').name)]",
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName'))]"
+      ]
+    },
+    {
       "type": "Microsoft.Resources/deploymentScripts",
       "apiVersion": "2020-10-01",
       "name": "Image_template_build",
@@ -268,10 +273,12 @@
         "retentionInterval": "P1D"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Compute/galleries/images', parameters('imageGalleryName'), parameters('imageDefinitionProperties').name)]",
-        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName'))]"
+        "[resourceId('Microsoft.VirtualMachineImages/imageTemplates', parameters('imageTemplateName'))]",
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('templateIdentityName'))]",
+        "[resourceId('Microsoft.Authorization/roleAssignments', variables('templateIdentityRoleAssignmentName'))]"
       ]
     }
-   
-
+  ]
 }
+  
+ 
