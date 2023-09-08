@@ -6,7 +6,7 @@
       "name": "bicep",
       "version": "0.17.1.54307",
       "templateHash": "5091040178081578374"
-    }  
+    }   
   }, 
   "parameters": {
     "location": {
