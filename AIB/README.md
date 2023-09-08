@@ -12,6 +12,8 @@
 
 [Azure VM 映像生成器概述](https://learn.microsoft.com/en-us/azure/virtual-machines/image-builder-overview?tabs=azure-powershell)
 
+[Azure模板最佳实践](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/azure-resource-manager/templates/best-practices.md)
+
 
 
 ## 测试链接2
