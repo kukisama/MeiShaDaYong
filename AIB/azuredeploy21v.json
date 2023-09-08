@@ -35,7 +35,7 @@
       "defaultValue": "[guid(resourceGroup().id)]",
       "metadata": {
         "description": "允许用户分配的托管标识的权限."
-      }
+      } 
     },
     "imageGalleryName": {
       "type": "string",
