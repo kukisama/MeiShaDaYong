@@ -4,7 +4,8 @@ AIB在中国部署需要注意的地方
 - AIB只有北3可用
 - 没有图形界面操作，只能使用命令或者API
 - 北3缺少`部署脚本`功能
-- 
+
+  
 ##  测试链接1：
 
 [Azure Global门户](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkukisama%2FMeiShaDaYong%2Fmain%2FAIB%2Fazuredeploy21v.json) 
@@ -26,5 +27,5 @@ AIB在中国部署需要注意的地方
 
 [Azure模板最佳实践](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/azure-resource-manager/templates/best-practices.md)
 
-
+[Arm模板中的部署脚本功能](https://learn.microsoft.com/en-us/azure/templates/microsoft.resources/deploymentscripts?pivots=deployment-language-arm-template)
 
