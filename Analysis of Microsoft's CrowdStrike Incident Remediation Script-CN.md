@@ -1,3 +1,5 @@
+中文|English
+
 # 对微软CrowdStrike事件修复脚本的分析
 ## 引子
 
