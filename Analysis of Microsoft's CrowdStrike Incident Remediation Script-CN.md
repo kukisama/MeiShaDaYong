@@ -1,4 +1,4 @@
-中文|English
+[中文](./Analysis%20of%20Microsoft's%20CrowdStrike%20Incident%20Remediation%20Script-CN.md)|English
 
 # 对微软CrowdStrike事件修复脚本的分析
 ## 引子
