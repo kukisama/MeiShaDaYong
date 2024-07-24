@@ -1,4 +1,5 @@
-[中文](./Analysis%20of%20Microsoft's%20CrowdStrike%20Incident%20Remediation%20Script-CN.md)|English
+[中文](./Analysis_of_Microsoft's_CrowdStrike_Incident_Remediation_Script-CN.md)|[English](./Analysis_of_Microsoft's_CrowdStrike_Incident_Remediation_Script-EN.md)
+
 
 # 对微软CrowdStrike事件修复脚本的分析
 ## 引子
@@ -592,5 +593,4 @@ if (Test-Path -Path $WorkingLocation)
 5. **为PE添加包和驱动**：向WinPE镜像中添加必要的包和驱动程序。
 6. **创建ISO或USB密钥**：最终生成包含恢复工具的ISO文件或将其写入USB驱动器。
 
-希望这篇文章能为大家在处理系统恢复问题时提供一些帮助，以及确保在测试和生产中引入微软的这个脚本，同时对修改脚本提供理论支持。
-最后希望大家能够喜欢`PowerShell`
+希望这篇文章能为大家在处理系统恢复问题时提供一些帮助，以及确保，成功在测试和生产环境中引入微软的这个脚本，同时对修改脚本提供理论支持。
